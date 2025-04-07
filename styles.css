@@ -1,0 +1,186 @@
+/* Сброс отступов и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Заголовок и логотип */
+  header {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin-bottom: 10px;
+  }
+  
+  header img {
+    margin: 10px 0;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Форма поиска */
+  form {
+    margin: 10px 0;
+  }
+  
+  form input[type="text"],
+  form input[type="email"] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form button {
+    padding: 8px 16px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Кнопка входа */
+  header button[type="button"] {
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  header button:hover {
+    background-color: #008ecc;
+  }
+  
+  /* Навигация */
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  
+  nav li {
+    margin: 5px 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Основное содержимое */
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  aside {
+    background: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Подвал */
+  footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+  
+  /* Адаптивная верстка для планшетов и телефонов */
+@media (max-width: 1024px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav li {
+      margin: 10px 0;
+    }
+  
+    header img {
+      width: 100%;
+      height: auto;
+    }
+  
+    form input[type="text"],
+    form input[type="email"] {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 24px;
+    }
+  
+    header {
+      padding: 10px;
+    }
+  
+    nav ul {
+      padding: 0;
+    }
+  
+    main {
+      padding: 10px;
+    }
+  
+    section,
+    aside {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav ul {
+      font-size: 14px;
+    }
+  
+    form button,
+    header button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    section h2,
+    aside h3 {
+      font-size: 18px;
+    }
+  }
+  

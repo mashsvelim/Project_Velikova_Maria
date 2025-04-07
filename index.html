@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World of language</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
 
   <header>
     <h1>World of language</h1>
-    <img src="images/flagsofgermanandenglish.jpg" alt="Логотип" width="600" height="200">
-    <input type="text" name="search" id="search" placeholder="Найти курс">
-    <button>Вход или регистрация</button>
+    <img src="images/images/german-english-flags.jpg" alt="Логотип" width="600" height="200">
+
+    <form action="search.php" method="get">
+      <label for="search">Поиск курсов:</label>
+      <input type="text" name="search" id="search" placeholder="Найти курс" required>
+      <button type="submit">Найти</button>
+    </form>
+    
+    <button type="button">Вход или регистрация</button>
 
     <nav>
       <ul>
@@ -36,7 +42,7 @@
       <h2>Курсы</h2>
       <p>Доступные курсы</p>
       <p>Специальные предложения и акции</p>
-      <button>Записаться на курс</button>
+      <button type="button">Записаться на курс</button>
     </section>
 
     <section id="about">
@@ -59,8 +65,11 @@
 
     <aside>
       <h3>Подписка на рассылку</h3>
-      <input type="email" placeholder="Введите email">
-      <button>Подписаться</button>
+      <form action="subscribe.php" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Введите email" required>
+        <button type="submit">Подписаться</button>
+      </form>
     </aside>
   </main>
 

@@ -9,95 +9,97 @@
 </head>
 <body>
 
-  <header>
-    <h1>World of language</h1>
-    <img src="images/englishandgermanflags.webp" alt="Логотип" width="600" height="200" />
+  <header class="header">
+    <h1 class="header__title">World of language</h1>
 
-    <form action="search.php" method="get">
+    <form class="header__search-form" action="search.php" method="get">
       <label for="search">Поиск курсов:</label>
       <input type="text" name="search" id="search" placeholder="Найти курс" required />
       <button type="submit">Найти</button>
     </form>
 
-    <button type="button">Вход или регистрация</button>
+    <button class="header__auth-button" type="button">Вход или регистрация</button>
 
-    <nav>
-      <ul>
-        <li><a href="#home">Главная</a></li>
-        <li><a href="#courses">Курсы</a></li>
-        <li><a href="#about">О нас</a></li>
-        <li><a href="#blog">Блог</a></li>
-        <li><a href="#contact">Контакты</a></li>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="#home" class="nav__link">Главная</a></li>
+        <li><a href="#courses" class="nav__link">Курсы</a></li>
+        <li><a href="#about" class="nav__link">О нас</a></li>
+        <li><a href="#blog" class="nav__link">Блог</a></li>
+        <li><a href="#contact" class="nav__link">Контакты</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="home">
-      <h2>Поиск по названию курсов</h2>
+  <main class="main">
+    <section id="home" class="section section--home">
+      <h2 class="section__title">Поиск по названию курсов</h2>
       <p>Добро пожаловать!</p>
     </section>
 
-    <section id="courses">
-      <h2>Курсы</h2>
-      <div class="course-card">
-        <h3>Немецкий для переводчиков</h3>
-        <p>Курс для будущих лингвистов и переводчиков.</p>
-        <button>Узнать больше</button>
-      </div>
-
-      <div class="course-cards">
-        <div class="course-card">
-          <h3>Немецкий язык A1-A2</h3>
-          <p>Базовый курс для начинающих.</p>
-          <button>Узнать больше</button>
-        </div>
-
-        <div class="course-card">
-          <h3>Немецкий язык B1-B2</h3>
-          <p>Разговорная практика и грамматика.</p>
-          <button>Узнать больше</button>
-        </div>
-        
-        <div class="course-card">
-          <h3>Английский для переводчиков</h3>
-          <p>Курс для будущих лингвистов и переводчиков.</p>
-          <button>Узнать больше</button>
-        </div>
-
+    <section id="courses" class="section section--courses">
+      <div class="section__overlay">
+        <h2 class="section__title">Курсы</h2>
+        <div class="course-cards">
+          <!-- Курсы (оставлены без изменений) -->
           <div class="course-card">
-            <h3>Английский язык A1-A2</h3>
-            <p>Базовый курс для начинающих.</p>
-            <button>Узнать больше</button>
+            <h3 class="course-card__title">Немецкий для переводчиков</h3>
+            <p class="course-card__description">Курс для будущих лингвистов и переводчиков.</p>
+            <button class="course-card__button" type="button">Узнать больше</button>
           </div>
 
-            <div class="course-card">
-              <h3>Английский язык B1-B2</h3>
-              <p>Разговорная практика и грамматика.</p>
-              <button>Узнать больше</button>
-            </div>
+          <div class="course-card">
+            <h3 class="course-card__title">Немецкий язык A1-A2</h3>
+            <p class="course-card__description">Базовый курс для начинающих.</p>
+            <button class="course-card__button" type="button">Узнать больше</button>
+          </div>
+
+          <div class="course-card">
+            <h3 class="course-card__title">Немецкий язык B1-B2</h3>
+            <p class="course-card__description">Разговорная практика и грамматика.</p>
+            <button class="course-card__button" type="button">Узнать больше</button>
+          </div>
+
+          <div class="course-card">
+            <h3 class="course-card__title">Английский для переводчиков</h3>
+            <p class="course-card__description">Курс для будущих лингвистов и переводчиков.</p>
+            <button class="course-card__button" type="button">Узнать больше</button>
+          </div>
+
+          <div class="course-card">
+            <h3 class="course-card__title">Английский язык A1-A2</h3>
+            <p class="course-card__description">Базовый курс для начинающих.</p>
+            <button class="course-card__button" type="button">Узнать больше</button>
+          </div>
+
+          <div class="course-card">
+            <h3 class="course-card__title">Английский язык B1-B2</h3>
+            <p class="course-card__description">Разговорная практика и грамматика.</p>
+            <button class="course-card__button" type="button">Узнать больше</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="about">
-      <h2>О нас</h2>
+    <section id="about" class="section">
+      <h2 class="section__title">О нас</h2>
       <p>Мы предлагаем лучшие языковые курсы онлайн и оффлайн.</p>
     </section>
 
-    <section id="blog">
-      <h2>Блог</h2>
+    <section id="blog" class="section">
+      <h2 class="section__title">Блог</h2>
       <p>Рекомендуемые статьи из блога</p>
       <p>Популярные курсы</p>
       <p>Актуальные события</p>
     </section>
 
-    <section id="contact">
-      <h2>Связаться с нами</h2>
-      <p>Email: contact@example.com</p>
-      <p>Телефон: +7 (123) 456-78-90</p>
+    <section id="contact" class="section">
+      <h2 class="section__title">Связаться с нами</h2>
+      <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+      <p>Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></p>
     </section>
 
-    <aside>
+    <aside class="aside">
       <h3>Подписка на рассылку</h3>
       <form action="subscribe.php" method="post">
         <label for="email">Email:</label>
@@ -107,7 +109,7 @@
     </aside>
   </main>
 
-  <footer>
+  <footer class="footer">
     <p>© 2024 Все права защищены. Команда: Мария Великова, Карина Котельникова.</p>
   </footer>
 

@@ -1,22 +1,40 @@
 h1, h2, h3 {
   font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-text);
+  color: var(--primary-color);
 }
 
-h1 {
-  font-size: 36px;
+.section__title {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-h2 {
-  font-size: 28px;
+.section__text {
+  font-size: 1.125rem;
+  margin-bottom: 15px;
 }
 
-h3 {
-  font-size: 22px;
+.section__title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
 }
 
-p {
-  font-size: 18px;
-  line-height: 1.5;
+.section__text {
+  font-size: 1.125rem;
+  color: var(--text-color);
 }
+
+.course-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.course-card__description {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+

@@ -1,18 +1,52 @@
-*,
-*::before,
-*::after {
+/* Общие базовые стили */
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #333;
 }
 
-img {
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Глобальные улучшения для переполнения и минимальной ширины */
+html, body {
   max-width: 100%;
-  display: block;
-  height: auto;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.course-card__description,
+.section__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.course-card {
+  min-width: 250px;
+}
+
+.course-card,
+.section__title,
+.section__text {
+  transition: all 0.3s ease;
 }

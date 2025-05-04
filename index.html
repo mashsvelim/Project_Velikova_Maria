@@ -2,36 +2,32 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>World of language</title>
-  <link rel="stylesheet" href="styles/normalize.css" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <script src="script.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World of Language</title>
+
+  <!-- Подключение CSS-файлов -->
+<link rel="stylesheet" href="styles/base.css" />
+<link rel="stylesheet" href="styles/colors.css" />
+<link rel="stylesheet" href="styles/fonts.css" />
+<link rel="stylesheet" href="styles/normalize.css" />
+<link rel="stylesheet" href="styles/dtelts.css" />
+<link rel="stylesheet" href="styles/typography.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+<link rel="stylesheet" href="styles/responsive.css" />
 </head>
 <body>
-
   <header class="header">
-
-
-    <h1 class="header__title">World of language</h1>
-
-    <form class="header__search-form" action="search.php" method="get">
-      <label class="header__search-label" for="search">Поиск курсов:</label>
-      <input class="header__search-input" type="text" name="search" id="search" placeholder="Найти курс" required />
-      <button class="header__search-button" type="submit">Найти</button>
-    </form>
-
-    <button class="header__auth-button" type="button">Вход или регистрация</button>
-
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#home" class="nav__link">Главная</a></li>
-        <li class="nav__item"><a href="#courses" class="nav__link">Курсы</a></li>
-        <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
-        <li class="nav__item"><a href="#blog" class="nav__link">Блог</a></li>
-        <li class="nav__item"><a href="#contact" class="nav__link">Контакты</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1 class="header__title">World of Language</h1>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link">Главная</a></li>
+          <li><a href="#courses" class="nav__link">Курсы</a></li>
+          <li><a href="#about" class="nav__link">О нас</a></li>
+          <li><a href="#blog" class="nav__link">Блог</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="main">
@@ -90,31 +86,16 @@
 
     <section id="blog" class="section">
       <h2 class="section__title">Блог</h2>
-
-<p class="section__text">Рекомендуемые статьи из блога</p>
+      <p class="section__text">Рекомендуемые статьи из блога</p>
       <p class="section__text">Популярные курсы</p>
       <p class="section__text">Актуальные события</p>
     </section>
-
-    <section id="contact" class="section">
-      <h2 class="section__title">Связаться с нами</h2>
-      <p class="section__text">Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
-      <p class="section__text">Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></p>
-    </section>
-
-    <aside class="aside">
-      <h3 class="aside__title">Подписка на рассылку</h3>
-      <form class="aside__form" action="subscribe.php" method="post">
-        <label class="aside__label" for="email">Email:</label>
-        <input class="aside__input" type="email" id="email" name="email" placeholder="Введите email" required />
-        <button class="aside__button" type="submit">Подписаться</button>
-      </form>
-    </aside>
   </main>
 
   <footer class="footer">
-    <p class="footer__text">© 2024 Все права защищены. Команда: Мария Великова, Карина Котельникова.</p>
+    <div class="container">
+      <p class="footer__text">© 2024 Все права защищены. Команда: Мария Великова, Карина Котельникова.</p>
+    </div>
   </footer>
-
 </body>
 </html>

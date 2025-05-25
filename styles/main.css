@@ -1,0 +1,60 @@
+.main {
+    padding: 40px 0;
+}
+
+.main__section {
+    margin-bottom: 20px;
+}
+
+.main__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.main__text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.main__form {
+    margin-top: 20px;
+}
+
+.main__input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.main__input:focus {
+    outline: 2px solid #007bff;
+}
+
+.main__button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.main__button:hover {
+    background: #0056b3;
+}
+
+.main__button:focus {
+    outline: 2px solid #0056b3;
+}
+
+.main__button:active {
+    background: #003087;
+}
+
+.main__button--disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}

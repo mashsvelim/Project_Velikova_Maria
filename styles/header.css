@@ -1,0 +1,34 @@
+.header {
+    background: #007bff;
+    color: white;
+    padding: 20px 0;
+}
+
+.header__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header__nav {
+    margin-top: 10px;
+}
+
+.header__link {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.1rem;
+}
+
+.header__link:hover {
+    text-decoration: underline;
+}
+
+.header__link:focus {
+    outline: 2px solid #fff;
+}
+
+.header__link:active {
+    color: #ccc;
+}

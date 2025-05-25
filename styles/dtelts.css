@@ -1,81 +1,33 @@
-/* Header */
-.header {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  .header__title {
-    font-size: 24px;
-  }
-  
-  .nav {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav__item {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-  
-  .header__auth-button {
-    padding: 10px 20px;
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Hero Section */
-  .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 20px;
-    background-color: var(--section-bg);
-  }
-  
-  .hero__content {
-    max-width: 600px;
-  }
-  
-  .hero__image {
-    width: 50%;
-  }
-  
-  /* Cards Section */
-  .section--cards {
-    padding: 40px 20px;
-    background-color: var(--background-color);
-  }
-  
-  .course-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
-  }
-  
-  .course-card {
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  /* Footer */
-  .footer {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-    font-size: 14px;
-    color: var(--text-color);
-  }
-  
+/* Формы */
+form {
+  margin: 10px 0;
+}
+
+form input[type="text"],
+form input[type="email"] {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 8px 16px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #005bb5;
+}
+
+form button:focus,
+.header__auth-button:focus,
+.aside__button:focus,
+.course-card__button:focus {
+  outline: 2px solid #005bb5;
+  outline-offset: 2px;
+}

@@ -1,33 +1,17 @@
-/* Формы */
-form {
-  margin: 10px 0;
-}
+/* dtelts.css */
+/* Декоративные элементы и стили кнопок */
 
-form input[type="text"],
-form input[type="email"] {
-  padding: 8px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  padding: 8px 16px;
-  background-color: #0073e6;
-  color: white;
+.btn-primary {
+  padding: 12px 24px;
   border: none;
   border-radius: 4px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-form button:hover {
-  background-color: #005bb5;
-}
-
-form button:focus,
-.header__auth-button:focus,
-.aside__button:focus,
-.course-card__button:focus {
-  outline: 2px solid #005bb5;
-  outline-offset: 2px;
+.course-item {
+  background-color: var(--color-secondary);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
 }

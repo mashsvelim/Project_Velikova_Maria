@@ -1,60 +1,78 @@
-.main {
-    padding: 40px 0;
+.section {
+  padding: 3rem 0;
 }
 
-.main__section {
-    margin-bottom: 20px;
+.section__title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary-color);
 }
 
-.main__title {
-    font-size: 1.5rem;
-    font-weight: 700;
+/* Секция курсов с фоном */
+#courses {
+  background-image: url('../images/pink_green_colour.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 0;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.main__text {
-    font-size: 1rem;
-    color: #555;
+/* Карточки курсов */
+.course-cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.main__form {
-    margin-top: 20px;
+.course-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 280px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.main__input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
+.course-card__title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.main__input:focus {
-    outline: 2px solid #007bff;
+.course-card__description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
 }
 
-.main__button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.course-card__button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
+  transition: background-color 0.3s ease;
 }
 
-.main__button:hover {
-    background: #0056b3;
+.course-card__button:hover:not(:disabled) {
+  background-color: var(--primary-color-dark);
 }
 
-.main__button:focus {
-    outline: 2px solid #0056b3;
-}
-
-.main__button:active {
-    background: #003087;
-}
-
-.main__button--disabled {
-    background: #ccc;
-    cursor: not-allowed;
+.course-card__button--disabled {
+  background-color: #999;
+  cursor: not-allowed;
 }

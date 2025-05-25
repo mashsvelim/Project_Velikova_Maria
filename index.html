@@ -3,98 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="World of Language — изучай иностранные языки легко!" />
   <title>World of Language</title>
-
-  <!-- Подключение CSS-файлов -->
-<link rel="stylesheet" href="styles/base.css" />
-<link rel="stylesheet" href="styles/colors.css" />
-<link rel="stylesheet" href="styles/fonts.css" />
-<link rel="stylesheet" href="styles/normalize.css" />
-<link rel="stylesheet" href="styles/dtelts.css" />
-<link rel="stylesheet" href="styles/typography.css" />
-<link rel="stylesheet" href="styles/styles.css" />
-<link rel="stylesheet" href="styles/responsive.css" />
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/colors.css" />
+  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/typography.css" />
+  <link rel="stylesheet" href="styles/dtelts.css" />
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
 </head>
+
 <body>
   <header class="header">
     <div class="container">
-      <h1 class="header__title">World of Language</h1>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="#home" class="nav__link">Главная</a></li>
-          <li><a href="#courses" class="nav__link">Курсы</a></li>
-          <li><a href="#about" class="nav__link">О нас</a></li>
-          <li><a href="#blog" class="nav__link">Блог</a></li>
+      <h1 class="site-title">World of Language</h1>
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#courses">Курсы</a></li>
+          <li><a href="#contact">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="main">
-    <section id="home" class="section section--home">
-      <h2 class="section__title">Поиск по названию курсов</h2>
-      <p class="section__text">Добро пожаловать!</p>
+  <main>
+    <section class="intro">
+      <div class="container">
+        <h2>Открой мир иностранных языков!</h2>
+        <p>Научим говорить свободно и уверенно.</p>
+        <a href="#courses" class="btn-primary">Записаться на курс</a>
+      </div>
     </section>
 
-    <section id="courses" class="section section--courses">
-      <div class="section__overlay">
-        <h2 class="section__title">Курсы</h2>
-        <div class="course-cards">
-          <div class="course-card">
+    <section id="courses" class="section section-courses">
+      <div class="container">
+        <h2 class="section__title">Наши курсы</h2>
+        <div class="course-cards__list">
+          <article class="course-card">
             <h3 class="course-card__title">Немецкий для переводчиков</h3>
             <p class="course-card__description">Курс для будущих лингвистов и переводчиков.</p>
             <button class="course-card__button" type="button">Узнать больше</button>
-          </div>
-
-          <div class="course-card">
+          </article>
+          <article class="course-card">
             <h3 class="course-card__title">Немецкий язык A1-A2</h3>
             <p class="course-card__description">Базовый курс для начинающих.</p>
             <button class="course-card__button" type="button">Узнать больше</button>
-          </div>
-
-          <div class="course-card">
+          </article>
+          <article class="course-card">
             <h3 class="course-card__title">Немецкий язык B1-B2</h3>
             <p class="course-card__description">Разговорная практика и грамматика.</p>
             <button class="course-card__button" type="button">Узнать больше</button>
-          </div>
-
-          <div class="course-card">
+          </article>
+          <article class="course-card">
             <h3 class="course-card__title">Английский для переводчиков</h3>
             <p class="course-card__description">Курс для будущих лингвистов и переводчиков.</p>
             <button class="course-card__button" type="button">Узнать больше</button>
-          </div>
-
-          <div class="course-card">
+          </article>
+          <article class="course-card">
             <h3 class="course-card__title">Английский язык A1-A2</h3>
             <p class="course-card__description">Базовый курс для начинающих.</p>
             <button class="course-card__button" type="button">Узнать больше</button>
-          </div>
-
-          <div class="course-card">
+          </article>
+          <article class="course-card">
             <h3 class="course-card__title">Английский язык B1-B2</h3>
             <p class="course-card__description">Разговорная практика и грамматика.</p>
-            <button class="course-card__button" type="button">Узнать больше</button>
-          </div>
+            <button class="course-card__button course-card__button--disabled" type="button" disabled>Узнать больше</button>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2 class="section__title">О нас</h2>
-      <p class="section__text">Мы предлагаем лучшие языковые курсы онлайн и оффлайн.</p>
+    <section id="about" class="about">
+      <div class="container">
+        <h2>О нас</h2>
+        <p>Наша школа помогает изучать иностранные языки быстро, эффективно и с удовольствием.</p>
+      </div>
     </section>
 
-    <section id="blog" class="section">
-      <h2 class="section__title">Блог</h2>
-      <p class="section__text">Рекомендуемые статьи из блога</p>
-      <p class="section__text">Популярные курсы</p>
-      <p class="section__text">Актуальные события</p>
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Свяжитесь с нами</h2>
+        <form action="#" method="post" class="contact-form">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit" class="btn-primary">Отправить</button>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p class="footer__text">© 2024 Все права защищены. Команда: Мария Великова, Карина Котельникова.</p>
+      <p>&copy; 2025 World of Language. Все права защищены.</p>
+      <p>Проект выполнили Великова Мария и Котельникова Карина</p>
     </div>
   </footer>
 </body>

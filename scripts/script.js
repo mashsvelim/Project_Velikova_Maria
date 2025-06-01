@@ -2,13 +2,11 @@
 // ЗАДАНИЕ 3.2 — Динамическая составляющая
 // Алгоритм:
 // 1. Начало
-// 2. Получаем элемент кнопки по ID ("theme-toggle")
-// 3. Проверяем: найден ли элемент?
+// 2. Получаем элементы карточек преподавателей
+// 3. Проверяем: найдены ли элементы?
 //    3.1. Да:
-//        3.1.1. Добавляем обработчик события "mouseover"
-//        3.1.2. Выводим сообщение в консоль при наведении
-//        3.1.3. Добавляем обработчик события "mouseleave"
-//        3.1.4. Выводим сообщение в консоль при уходе курсора
+//        3.1.1. Для каждой карточки добавляем обработчик "mouseover"
+//        3.1.2. При наведении выводим сообщение в консоль
 //    3.2. Нет:
 //        3.2.1. Выводим ошибку в консоль
 // 4. Конец
@@ -17,81 +15,54 @@
 //
 
 // --- Переменные ---
-const themeToggle = document.getElementById('theme-toggle');
+const teacherCards = document.querySelectorAll('.teacher-card');
 
 // --- Логика работы ---
-if (themeToggle) {
-    // Если кнопка найдена
-
-    // При наведении выводим сообщение
-    themeToggle.addEventListener('mouseover', () => {
-        console.log("Курсор наведён на кнопку смены темы");
+if (teacherCards.length > 0) {
+    teacherCards.forEach((card, index) => {
+        card.addEventListener('mouseover', () => {
+            console.log(`Курсор наведён на преподавателя №${index + 1}`);
+        });
     });
-
-    // При уходе курсора выводим другое сообщение
-    themeToggle.addEventListener('mouseleave', () => {
-        console.log("Курсор ушёл с кнопки");
-    });
-
 } else {
-    // Если кнопка не найдена
-    console.error("Ошибка: кнопка с ID 'theme-toggle' не найдена.");
+    console.error("Ошибка: карточки преподавателей не найдены.");
 }
 
-// =============================
-// ОСНОВНЫЙ ФУНКЦИОНАЛ САЙТА
-// =============================
+// === Слайдер преподавателей ===
+const prevButton = document.getElementById('prev-teachers');
+const nextButton = document.getElementById('next-teachers');
+const teacherCardContainer = document.getElementById('teacherCards');
 
-// --- Сообщение о загрузке скрипта ---
-console.log("✅ Скрипт успешно загружен!");
+if (teacherCardContainer && prevButton && nextButton) {
+    const cardWidth = teacherCards[0].offsetWidth + 20;
 
-// --- Переключение темы (светлая / тёмная) ---
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        document.body.classList.toggle('light');
+    prevButton.addEventListener('click', () => {
+        teacherCardContainer.scrollLeft -= cardWidth;
+    });
 
-        const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', currentTheme);
+    nextButton.addEventListener('click', () => {
+        teacherCardContainer.scrollLeft += cardWidth;
     });
 }
 
-// --- Загрузка сохранённой темы ---
+// === Переключение темы ===
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    document.body.classList.toggle('light');
+
+    const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', currentTheme);
+});
+
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.className = savedTheme;
 });
 
-// --- AOS (анимация при скролле) ---
+// === Инициализация AOS ===
 AOS.init({
     duration: 1000,
-    once: true // Анимация проигрывается один раз
+    once: true
 });
-
-// --- Валидация формы обратной связи ---
-document.getElementById('contact-form')?.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !email || !message) {
-        alert("Пожалуйста, заполните все поля.");
-        return;
-    }
-
-    if (!validateEmail(email)) {
-        alert("Введите корректный email-адрес.");
-        return;
-    }
-
-    alert("Форма успешно отправлена!");
-    console.log("Данные формы:", { name, email, message });
-    this.reset();
-});
-
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-}

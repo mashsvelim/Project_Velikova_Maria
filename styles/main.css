@@ -3,7 +3,7 @@
 }
 
 .section__title {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', serif;
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -11,7 +11,7 @@
   color: var(--primary-color);
 }
 
-/* Секция курсов с фоном */
+/* === Секция курсов с фоном === */
 #courses {
   background-image: url('../images/pink_green_colour.webp');
   background-size: cover;
@@ -19,10 +19,10 @@
   padding: 4rem 0;
   color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Карточки курсов */
+/* === Карточки курсов === */
 .course-cards__list {
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +33,7 @@
 .course-card {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   width: 280px;
   color: #333;
@@ -43,17 +43,23 @@
 }
 
 .course-card__title {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .course-card__description {
-  font-family: 'Roboto', sans-serif;
+  background-image: url('../images/groundspace.png');
+  background-color: rgb(250, 250, 250); /* светлый фон поверх фона, чтобы было читаемо */
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   margin-bottom: 1rem;
   flex-grow: 1;
+  padding: 1rem;
+  color: #333; /* тёмный цвет текста */
+  text-align: center;
 }
 
 .course-card__button {
@@ -69,7 +75,7 @@
 }
 
 .course-card__button:hover:not(:disabled) {
-  background-color: var(--primary-color-dark);
+  background-color: var(--accent-color);
 }
 
 .course-card__button--disabled {
@@ -77,30 +83,41 @@
   cursor: not-allowed;
 }
 
+/* === Преподаватели — Слайдер === */
+
 .teacher-slider {
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  position: relative;
 }
 
 .teacher-cards {
+  background-image: url('../images/groundspace.png');
+  background-size: cover;
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 10px 20px;
   transition: all 0.3s ease;
+  position: relative;
+  flex-grow: 1;
+  max-width: calc(100% - 100px); /* для кнопок слева и справа */
 }
 
 .teacher-card {
   min-width: 300px;
+  flex: 1 1 300px; /* позволяет адаптироваться к размеру экрана */
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   scroll-snap-align: start;
   transition: transform 0.3s ease;
+  position: relative;
+  flex-shrink: 0;
 }
 
 .teacher-card:hover {
@@ -119,17 +136,96 @@
 .teacher-card h3 {
   font-size: 1.5rem;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .teacher-card p {
   font-size: 1rem;
   color: #666;
+  font-family: 'Poppins', sans-serif;
 }
 
-#prev-teachers, #next-teachers {
+/* === Кнопки слайдера преподавателей === */
+#prev-teachers,
+#next-teachers {
   font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
   color: #333;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+#prev-teachers {
+  margin-right: 10px;
+}
+
+#next-teachers {
+  margin-left: 10px;
+}
+
+/* === Горизонтальный скроллер для групп === */
+.group-slider {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.group-cards {
+  background-image: url('../images/groundspace.png');
+  background-size: cover;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.group-card {
+  min-width: 250px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.group-card h4 {
+  font-size: 1.2rem;
+  margin: 0 0 10px;
+}
+
+.group-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* === Кнопки навигации === */
+.group-nav {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  z-index: 2;
+}
+
+.group-prev {
+  margin-right: 10px;
+}
+
+.group-next {
+  margin-left: 10px;
 }

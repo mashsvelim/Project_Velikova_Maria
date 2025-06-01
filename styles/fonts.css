@@ -1,1 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap');
+
+/* Основной шрифт сайта */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* Кнопки, инпуты, формы */
+.btn-primary,
+button,
+input,
+textarea {
+  font-family: inherit;
+}

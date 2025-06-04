@@ -171,3 +171,133 @@ if (groupCardContainer && groupPrevButton && groupNextButton) {
 } else {
   console.error("Ошибка: элементы слайдера групп не найдены.");
 }
+
+// =============================
+// ЗАДАНИЕ 3.4 — Показ описания в модальном окне
+// Алгоритм:
+// 1. Начало
+// 2. Получаем все кнопки "Узнать больше"
+// 3. Получаем элементы модального окна
+// 4. Для каждой кнопки добавляем обработчик click
+//    4.1. Находим связанное описание внутри карточки
+//    4.2. Копируем текст в модальное окно
+//    4.3. Открываем модальное окно
+// 5. Добавляем обработчики на закрытие окна
+//    5.1. По клику на крестик → закрываем окно
+//    5.2. По клику вне окна → закрываем
+// 6. Конец
+//
+// Блок-схема: images/Block-schema.png
+//
+
+const learnMoreButtons = document.querySelectorAll('.course-card__button');
+const modalOverlay = document.querySelector('.modal-overlay');
+const modalDescription = document.querySelector('.modal-description');
+const modalClose = document.querySelector('.modal-close');
+
+if (learnMoreButtons.length > 0 && modalOverlay && modalDescription && modalClose) {
+    // Открытие модального окна
+    learnMoreButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const fullDescription = button.nextElementSibling;
+
+            if (!fullDescription || !fullDescription.classList.contains('course-card__full-description')) {
+                console.error("Ошибка: описание не найдено или имеет неверный класс");
+                return;
+            }
+
+            // Копируем содержимое в модальное окно
+            modalDescription.innerHTML = fullDescription.innerHTML;
+            modalOverlay.classList.remove('hidden');
+        });
+    });
+
+    // Закрытие по крестику
+    modalClose.addEventListener('click', () => {
+        modalOverlay.classList.add('hidden');
+    });
+
+    // Закрытие по клику вне окна
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.add('hidden');
+        }
+    });
+
+} else {
+    console.error("Ошибка: элементы модального окна не найдены.");
+}
+
+// =============================
+// ЗАДАНИЕ 4 — Вывод заголовков курсов из массива
+// Алгоритм:
+// 1. Начало
+// 2. Создаем массив заголовков курсов
+// 3. Получаем контейнер для вывода #course-titles
+// 4. Проверяем: найден ли элемент?
+//    4.1. Да → проходим циклом forEach() по массиву
+//         Для каждого заголовка создаём <li> и добавляем на страницу
+//    4.2. Нет → выводим ошибку в консоль
+// 5. Конец
+//
+// Блок-схема: images/Block-schema.png
+//
+
+const courseTitles = [
+  "Немецкий для переводчиков",
+  "Немецкий язык A1–A2",
+  "Немецкий язык B1–B2",
+  "Английский для переводчиков",
+  "Английский язык A1–A2",
+  "Английский язык B1–B2"
+];
+
+const courseListOutput = document.getElementById('course-titles');
+
+if (courseListOutput) {
+  courseTitles.forEach(title => {
+    const listItem = document.createElement('li');
+    listItem.textContent = title;
+    courseListOutput.appendChild(listItem);
+  });
+} else {
+  console.error("Ошибка: элемент #course-titles не найден.");
+}
+
+// =============================
+// ЗАДАНИЕ 4 — Кнопка скролла вверх
+// Алгоритм:
+// 1. Начало
+// 2. Получаем кнопку по ID #scroll-to-top
+// 3. Добавляем обработчик события scroll
+//    3.1. Если пользователь прокрутил > 300px → показываем кнопку
+//    3.2. Иначе → скрываем кнопку
+// 4. Добавляем обработчик click на кнопку
+//    При клике прокручиваем страницу к началу
+// 5. Конец
+//
+// Блок-схема: images/Block-schema.png
+//
+
+const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+if (scrollToTopBtn) {
+  // Показываем/скрываем кнопку при скролле
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  // Прокрутка вверх при клике
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+} else {
+  console.error("Ошибка: кнопка #scroll-to-top не найдена.");
+}

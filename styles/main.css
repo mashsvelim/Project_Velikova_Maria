@@ -490,6 +490,7 @@ body.dark .course-card__description {
 }
 
 @keyframes spin {
+  from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
@@ -604,4 +605,41 @@ body.dark .course-card__description {
   background-color: #f7f9fd;
   padding: 10px;
   border-radius: 8px;
+}
+.app-links {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.app-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-link:hover {
+  opacity: 1;
+}
+
+.app-link.vk {
+  background-color: #466e95; /* Синий цвет ВК */
+}
+
+.app-link.tg {
+  background-color: #2aabee; /* Голубой цвет Telegram */
+}
+
+.app-link.wa {
+  background-color: #25d366; /* Зелёный цвет WhatsApp */
 }

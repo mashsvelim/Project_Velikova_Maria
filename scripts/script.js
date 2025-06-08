@@ -150,6 +150,7 @@ if (courseContainer) {
       <p class="course-card__price"><strong>💰 Стоимость:</strong> ${course.price}</p>
       <p class="course-card__duration">Прдолжительность курса:</strong> ${course.duration}</p>
       <button class="course-card__button" type="button">Узнать больше</button>
+      <button class="course-card__button cart-btn" type="button">Добавить в корзину</button>
       <div class="course-card__full-description" hidden>
         ${course.fullDescription}
       </div>
@@ -161,6 +162,89 @@ if (courseContainer) {
   console.error("Ошибка: контейнер для курсов не найден.");
 }
 
+// =============================
+// Корзина — хранение выбранных курсов
+const cart = [];
+
+// =============================
+// Функция добавления в корзину
+function addToCart(course) {
+  const existing = cart.find(item => item.id === course.id);
+  if (!existing) {
+    course.quantity = 1;
+    cart.push(course);
+  } else {
+    existing.quantity++;
+  }
+
+  updateCart();
+}
+
+// =============================
+// Обработчик клика на "Добавить в корзину"
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('cart-btn')) {
+    const card = e.target.closest('.course-card');
+    const courseId = card.getAttribute('data-category') + '-' + card.querySelector('h3').textContent;
+
+    const courseData = {
+      id: courseId,
+      title: card.querySelector('h3').textContent,
+      price: card.querySelector('.course-card__price')?.textContent.replace(/[^0-9]/g, '') || '0',
+      quantity: 1
+    };
+
+    addToCart(courseData);
+  }
+});
+// =============================
+// Обновление отображения корзины
+function updateCart() {
+  const cartList = document.getElementById('cartList');
+  cartList.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.className = 'cart-item';
+    li.innerHTML = `
+      <span>${item.title} — ${item.price} ₽ × ${item.quantity}</span>
+      <button class="remove-btn" data-index="${index}">❌ Удалить</button>
+    `;
+    cartList.appendChild(li);
+  });
+
+  // Обработчики удаления
+  document.querySelectorAll('.remove-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = btn.getAttribute('data-index');
+      cart.splice(index, 1);
+      updateCart();
+    });
+  });
+
+  // Обработчик оформления заказа
+  document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert("Корзина пуста");
+      return;
+    }
+
+    let summary = "Вы выбрали:\n";
+    cart.forEach(item => {
+      summary += `${item.title} — ${item.price} ₽ × ${item.quantity}\n`;
+    });
+
+    summary += `\nИтого: ${getTotalPrice()} ₽`;
+
+    alert(summary);
+  });
+}
+
+// =============================
+// Подсчёт итоговой суммы
+function getTotalPrice() {
+  return cart.reduce((sum, item) => sum + parseInt(item.price) * item.quantity, 0);
+}
 
 // =============================
 // ЗАДАНИЕ 3.2 — Появление описания при наведении
